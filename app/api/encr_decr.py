@@ -10,6 +10,8 @@ def format_plaintext(is_admin, password):
     return bytes(bytearray((is_admin).to_bytes(1,"big")) + tmp)
 
 def is_admin_cookie(decrypted_cookie):
+    if len(decrypted_cookie):
+        return False
     return decrypted_cookie[0] == 1
 
 class Encryption(object):
