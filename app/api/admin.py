@@ -28,6 +28,7 @@ def set_coins(db, session):
     try:
         dpt = cbc.decrypt(ctxt_bytes)
     except ValueError as exc:
+        response.status = 400
         return template(
                 "profile",
                 user=admin,
@@ -36,6 +37,7 @@ def set_coins(db, session):
                 admin=admin.admin,
                 )
     if dpt is False:#Decrypt returns False if there was a padding exceptionu
+        response.status = 400
         return template(
                 "profile",
                 user=admin,
