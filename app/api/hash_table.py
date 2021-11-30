@@ -77,7 +77,7 @@ class HashBucket:
     
 #A closed-addressing hash table with collision resolution via chaining.
 class HashTable:
-    default_tkey = b'\x05'*16
+    default_tkey = b'\x00'*16
     
     def __init__(self,htsize,hash_table_key=None):
         self.size = htsize
