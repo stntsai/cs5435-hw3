@@ -19,8 +19,8 @@ import app.api.encr_decr
 from app.api.hash_table import HashTable,Entry
 
 
-encryption_key = b'\x02'*16
-hash_key = b'\x05'*16
+encryption_key = b'\x00'*16
+hash_key = b'\x00'*16
 htsize = 2**16
 param_ht = HashTable(htsize, hash_key)
 

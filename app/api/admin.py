@@ -15,7 +15,7 @@ from app.models.session import (
 
 import app.api.encr_decr
 
-encryption_key = b'\x02'*16
+encryption_key = b'\x00'*16
 
 @post('/setcoins')
 @logged_in
