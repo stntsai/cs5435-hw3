@@ -52,6 +52,3 @@ def po_attack(po, ctx):
     ctx_blocks = list(split_into_blocks(ctx, po.block_length))
     nblocks = len(ctx_blocks)
     # TODO: Implement padding oracle attack for arbitrary length message.
-
-
-    
