@@ -46,6 +46,7 @@ def set_coins(db, session):
     is_admin_user = app.api.encr_decr.is_admin_cookie(dpt)
     print("Is admin user: " + str(is_admin_user))
     if not is_admin_user:
+        response.status = 400
         return template(
             "profile",
             user=admin,
