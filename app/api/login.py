@@ -20,7 +20,7 @@ from app.api.hash_table import HashTable,Entry
 
 
 encryption_key = b'\x00'*16
-hash_key = b'\x01'*16
+hash_key = b'\x00'*16
 htsize = 2**16
 param_ht = HashTable(htsize, hash_key)
 

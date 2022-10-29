@@ -82,7 +82,10 @@ class HashTable:
     def __init__(self,htsize,hash_table_key=None):
         self.size = htsize
         self.table = [HashBucket() for i in range(htsize)]
-        self.tkey = HashTable.default_tkey
+        if hash_table_key:
+            self.tkey = hash_table_key
+        else:
+            self.tkey = default_tkey
         self.occupied = 0
 
     #Returns the siphash of the input with the hash table's key.
