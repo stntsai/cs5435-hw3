@@ -1,5 +1,7 @@
 # HW3 Short Answers
 
+Author: Jiahao Dong(jd787), Ming-Han Tsai(mt627)
+
 ## 1.5
 
 1. Why does using GCM prevent mauling and padding oracle attacks?
